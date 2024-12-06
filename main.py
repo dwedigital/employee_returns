@@ -22,10 +22,14 @@ def login_to_website():
         browser = p.chromium.launch(
             headless=False
         )  # Set headless=True to run without UI
+
         page = browser.new_page()
 
         # Navigate to the login page
         page.goto("https://empret.jsytax.je/empweb")
+
+        # print the html
+        print(page.inner_html("body"))
 
         # Wait for the login form to load
         page.wait_for_selector(
