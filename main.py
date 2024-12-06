@@ -29,7 +29,7 @@ def login_to_website():
         page.goto("https://empret.jsytax.je/empweb")
 
         # print the html
-        print(page.inner_html("body"))
+        # print(page.inner_html("body"))
 
         # Wait for the login form to load
         page.wait_for_selector(
