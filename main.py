@@ -68,7 +68,7 @@ def login_to_website():
             for i in range(1, len(rows)):
                 print(i)
                 page.click(
-                    f"#ContentPlaceHolder1_ContentPlaceHolder1_grdReturnsNew > tbody > tr:nth-child({i+1}) > td:nth-child(4) > a"
+                    f"#ContentPlaceHolder1_ContentPlaceHolder1_grdReturnsNew > tbody > tr:nth-child(2) > td:nth-child(4) > a"
                 )
                 page.click(
                     "#ContentPlaceHolder1_ContentPlaceHolder1_ContentPlaceHolder1_cmdNext"
@@ -125,6 +125,9 @@ def login_to_website():
 
         else:
             print("No returns to be processed")
+        
+        # print date and timestamp
+        print(time.strftime("%Y-%m-%d %H:%M:%S"))
 
         # Wait for a few seconds to see the result
         time.sleep(5)
