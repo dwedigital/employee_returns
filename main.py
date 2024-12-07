@@ -129,8 +129,8 @@ def login_to_website():
         # print date and timestamp
         print(time.strftime("%Y-%m-%d %H:%M:%S"))
 
-        # Wait for a few seconds to see the result
-        time.sleep(5)
+        # # Wait for a few seconds to see the result
+        # time.sleep(5)
 
         # Close the browser
         browser.close()
