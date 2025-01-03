@@ -56,6 +56,15 @@ def login_to_website():
 
         page.click('input[type="submit"]')
         page.wait_for_event("load")
+        
+        if page.is_visible("#ContentPlaceHolder1_ContentPlaceHolder1_ddlSelectedYear"):
+            #get today's year
+            year = time.strftime("%Y")
+            
+            # select right year from the dropdown
+            page.select_option("#ContentPlaceHolder1_ContentPlaceHolder1_ddlSelectedYear", year)
+            
+            page.wait_for_timeout(5000)
 
         # find the first row in the table ()
         if page.is_visible("#ContentPlaceHolder1_ContentPlaceHolder1_grdReturnsNew"):
@@ -127,7 +136,7 @@ def login_to_website():
             print("No returns to be processed")
         
         # print date and timestamp
-        print(time.strftime("%Y-%m-%d %H:%M:%S"))
+        print(f"Return completed: {time.strftime("%Y-%m-%d %H:%M:%S")}")
 
         # # Wait for a few seconds to see the result
         # time.sleep(5)
